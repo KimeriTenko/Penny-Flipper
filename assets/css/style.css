@@ -1,3 +1,4 @@
+
 html, 
 body {
     margin: 0;
@@ -14,6 +15,7 @@ main {
     background-image: url(https://adventuresmithexplorations.com/wp-content/uploads/2020/08/belize-sailing-vacations-island-600.jpg);
     margin: 20px;
     padding: 25px;
+    background-size: cover;
 }
 
 h1 {
@@ -38,7 +40,35 @@ button {
     margin-right: 10px;
     border-radius: 10px;
 }
+/* Coin Animation */
+.tails {
+    transform: roateX(180deg);
+}
+.heads,
+.tails {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
 
+@keyframes headsFlips {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(2520deg);
+    }
+}
+
+@keyframes tailsFlips {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(2340deg);
+    }
+}
 #flip,
 #roll {
     background: linear-gradient(to bottom left, lightblue, white);
