@@ -3,22 +3,21 @@ let headsFlips = 0
 let tailsFlips = 0
 
 //Listen for DOMContentLoaded to ensure that all HTML and resources have been loaded before attepting to run code
-
-document.addEventListener('DOMContentLoaded', function () {
     //Add event listeners and handlers for both buttons
-    document.getElementById('flip').addEventListener('click'), () => {
+    document.getElementById('flip').addEventListener('click', () => {
         //Calculate Probablities
         //Coin animation
         function toss() {
-            const coin = document.getElementById('coinImage');
+            const coin = document.getElementById("coin");
             coin.style.animation = "none";
             if (Math.random() <= 0.5) {
-                coin.style.animation = "flip-heads 3s forwards";
+                coin.style.animation = "headsFlips 3s forwards";
             } else {
-                coin.style.animation = "flip-tails 3s forwards";
+                coin.style.animation = "tailsFlips 3s forwards";
             }
         }
         //Take different actions dependent on result
+        let flippedHeads= Math.random() < 0.5
         if (flippedHeads) {
             //display image and message as heads
             document.getElementById('coinImage').src = 'assets/images/belizeCoinHeads.png';
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //Before trying to divide, make sure the total is not zero
         if (total > 0) {
             //Calculate percentage of heads and tails
-            percentsHeads = Math.round((headsFlips / total) * 100);
+            percentHeads = Math.round((headsFlips / total) * 100);
             percentTails = Math.round((tailsFlips / total) * 100);
 
         }
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('heads-percent').textContent = percentHeads + '%';
         document.getElementById('tails-percent').textContent = percentTails + '%';
 
-    };
+    })
 
     document.getElementById('clear').addEventListener('click', function() {
         //Reset the heads and tails value to zero
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //Befgore trying to divide, make sure the total is not zero
         if (total > 0) {
             //Calculate percentage of heads and tails
-            percentsHeads = Math.round((headsFlips / total) * 100)
+            percentHeads = Math.round((headsFlips / total) * 100)
             percentTails =  Math.round((tailsFlips / total) * 100)
 
         }
@@ -88,4 +87,3 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('tails').textContent = tailsFlips
         document.getElementById('tails-percent').textContent = percentTails + '%'   
     })
-})

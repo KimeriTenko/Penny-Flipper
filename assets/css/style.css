@@ -26,7 +26,7 @@ h1 {
 /* Controls and Message Styles */
 .controls {
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid rgb(248, 113, 23);
 }
 
 .message-container {
@@ -39,10 +39,13 @@ button {
     font-size: 1.5em;
     margin-right: 10px;
     border-radius: 10px;
+    animation-name: 'flip';
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
 }
 /* Coin Animation */
 .tails {
-    transform: roateX(180deg);
+    transform: rotateX(180deg);
 }
 .heads,
 .tails {
@@ -51,8 +54,7 @@ button {
     height: 100%;
     backface-visibility: hidden;
 }
-
-@keyframes headsFlips {
+@keyframes flip {
     0% {
         transform: rotateX(0);
     }
@@ -60,13 +62,12 @@ button {
         transform: rotateX(2520deg);
     }
 }
-
-@keyframes tailsFlips {
+@-webkit-keyframes flip {
     0% {
-        transform: rotateX(0);
+        -webkit-transform: rotateX(0);
     }
     100% {
-        transform: rotateX(2340deg);
+        -webkit-transform: rotateX(2520deg);
     }
 }
 #flip,
