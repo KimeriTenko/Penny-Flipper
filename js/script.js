@@ -20,7 +20,7 @@ document.getElementById('flip').addEventListener('click', () => {
     let flippedHeads = Math.random() < 0.5
     if (flippedHeads) {
         //display image and message as heads
-        document.getElementById('coinImage').src = 'https://photos.app.goo.gl/4hPDKGTBXA6EE47b9';
+        document.getElementById('coinImage').src = '/assets/images/belizeCoinHeads.png';
         document.getElementById('message').textContent = "You Flipped Heads!";
 
         //Add count to tally
@@ -28,7 +28,7 @@ document.getElementById('flip').addEventListener('click', () => {
     }
     else {
         //Display image and message as tails
-        document.getElementById('coinImage').src = 'https://photos.app.goo.gl/LGMRSwcFWRWB37Sa9';
+        document.getElementById('coinImage').src = '/assets/images/belizeCoinTails.jpeg';
         document.getElementById('message').textContent = "You Flipped Tails!";
 
         //Add count to tally
