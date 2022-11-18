@@ -2,10 +2,10 @@
 let headsFlips = 0
 let tailsFlips = 0
 
-//Listen for DOMContentLoaded to ensure that all HTML and resources have been loaded before attepting to run code
+//Listen for DOMContentLoaded to ensure that all HTML and resources have been loaded before attempting to run code
 //Add event listeners and handlers for both buttons
 document.getElementById('flip').addEventListener('click', () => {
-    //Calculate Probablities
+    //Calculate Probabilities
     //Coin animation
     function toss() {
         const coin = document.getElementById("coin");
@@ -20,7 +20,7 @@ document.getElementById('flip').addEventListener('click', () => {
     let flippedHeads = Math.random() < 0.5
     if (flippedHeads) {
         //display image and message as heads
-        document.getElementById('coinImage').src = '/assets/images/belizeCoinHeads.png';
+        document.getElementById('coinImage').src = 'https://photos.app.goo.gl/TjxWRuSbKRoWHzpM6';
         document.getElementById('message').textContent = "You Flipped Heads!";
 
         //Add count to tally
@@ -28,7 +28,7 @@ document.getElementById('flip').addEventListener('click', () => {
     }
     else {
         //Display image and message as tails
-        document.getElementById('coinImage').src = '/assets/images/belizeCoinTails.jpeg';
+        document.getElementById('coinImage2').src = 'https://photos.app.goo.gl/ucwzVD48CdJcQYHk9';
         document.getElementById('message').textContent = "You Flipped Tails!";
 
         //Add count to tally
@@ -74,7 +74,7 @@ document.getElementById('clear').addEventListener('click', function () {
     let percentHeads = 0
     let percentTails = 0
 
-    //Befgore trying to divide, make sure the total is not zero
+    //Before trying to divide, make sure the total is not zero
     if (total > 0) {
         //Calculate percentage of heads and tails
         percentHeads = Math.round((headsFlips / total) * 100)
